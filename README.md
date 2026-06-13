@@ -25,7 +25,7 @@
 | Deliverable | Link / Location |
 |:-----------|:-----|
 | 📄 **Project Report (PDF)** | [deliverables/EVARA_Report_v2.pdf](deliverables/EVARA_Report_v2.pdf) |
-| 🎬 **Video Presentation (Local)** | `deliverables/VID_20260613_143635.mp4` *(Excluded from GitHub due to >100MB limit, included in ZIP)* |
+| 🎬 **Video Presentation (Local)** | `deliverables/VID_20260613_143635.mp4` *(Excluded from GitHub due to >100MB limit)* |
 | ☁️ **Video Presentation (Drive)** | [Watch on Google Drive](https://drive.google.com/file/d/1KDXI6NVceHVmI545tQsJjb8-qw1R9CNw/view?usp=sharing) |
 
 ---
