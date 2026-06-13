@@ -1,0 +1,114 @@
+# ==============================================================================
+# EVARA Gitignore Rules
+# ==============================================================================
+
+# Node / Frontend Build & Modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+dist/
+build/
+.svelte-kit/
+.next/
+out/
+.docusaurus/
+.vuepress/
+
+# Python Virtual Environments & Packages
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Python Cache & Compiled Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.cache
+htmlcov/
+.mypy_cache/
+.pyre/
+.pytype/
+pip-log.txt
+pip-delete-this-directory.txt
+.ipynb_checkpoints
+
+# Environment Configs & Secrets
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.pem
+
+# Local Data Directories (Vector DB & Uploads)
+backend/data/
+backend/app/data/
+*.db
+*.sqlite3
+*.log
+data/
+
+# IDE / Operating System Configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+desktop.ini
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Large Deliverables Video Files (Exceeds GitHub 100MB limit)
+deliverables/*.mp4
+deliverables/*.mov
+deliverables/*.mkv
+deliverables/*.avi
+
