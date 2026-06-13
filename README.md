@@ -1,41 +1,51 @@
-# 🌠 EVARA — Enterprise RAG Engine (v3.0)
+<div align="center">
 
-> **Production-ready dual-cognition Retrieval-Augmented Generation platform** engineered for high-precision document synthesis and compliance-driven cybersecurity report analysis.
+<img src="https://img.shields.io/badge/EVARA-v3.0-2563eb?style=for-the-badge&labelColor=1e293b" alt="EVARA v3.0"/>
 
-EVARA combines a hybrid dense-sparse retrieval pipeline, context-aware neighborhood expansion, FlashRank cross-encoder reranking, and deterministic guardrail mechanics to deliver source-grounded answers with **zero hallucinated heuristics**.
+# 🌠 EVARA — Enterprise RAG Engine
+
+### *Production-ready dual-cognition Retrieval-Augmented Generation platform*
+
+> Engineered for high-precision document synthesis and compliance-driven cybersecurity report analysis. EVARA combines a hybrid dense-sparse retrieval pipeline, context-aware neighborhood expansion, FlashRank cross-encoder reranking, and deterministic guardrail mechanics to deliver source-grounded answers with **zero hallucinated heuristics**.
+
+<br/>
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq-Llama--3.3--70B-FF4B4B?style=flat-square&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+
+</div>
 
 ---
 
-## 🎁 Submission Deliverables
-
-* **Project Report (PDF):** [deliverables/EVARA_Report_v2.pdf](deliverables/EVARA_Report_v2.pdf)
-* **Video Presentation (Local File):** [deliverables/VID_20260613_143635.mp4](deliverables/VID_20260613_143635.mp4) (Excluded from Git, included inside submission ZIP)
-* **Video Presentation (Google Drive Mirror):** [Watch Presentation on Google Drive](https://drive.google.com/file/d/1KDXI6NVceHVmI545tQsJjb8-qw1R9CNw/view?usp=sharing)
+| Deliverable | Link / Location |
+|:-----------|:-----|
+| 📄 **Project Report (PDF)** | [deliverables/EVARA_Report_v2.pdf](deliverables/EVARA_Report_v2.pdf) |
+| 🎬 **Video Presentation (Local)** | `deliverables/VID_20260613_143635.mp4` *(Excluded from GitHub due to >100MB limit, included in ZIP)* |
+| ☁️ **Video Presentation (Drive)** | [Watch on Google Drive](https://drive.google.com/file/d/1KDXI6NVceHVmI545tQsJjb8-qw1R9CNw/view?usp=sharing) |
 
 ---
 
 ## 📸 Interface Screenshots
 
 ### Normal Mode — Document Analysis Workspace
-
 ![EVARA Normal Mode Empty](screenshots/ss1_normal_empty.png)
-
 *Standard RAG workspace: drag-and-drop indexer, prompt blueprints, and API Credit Ledger on initial load.*
 
 ---
 
 ### Normal Mode — Active RAG Query
-
 ![EVARA Normal Mode Active](screenshots/ss2_normal_active.png)
-
 *Three documents indexed and queried. Co-processor returns a structured timeline with inline source citations `[filename | Page N]` and live token cost tracking.*
 
 ---
 
 ### Security Copilot Mode — Vulnerability Analysis
-
 ![EVARA Security Mode](screenshots/ss3_security_mode.png)
-
 *Emerald-themed Security Copilot workspace analyzing an enterprise vulnerability scan. OWASP Top 10 query returns asset-centric findings: **Asset → Severity → Finding → Evidence → Recommendation**.*
 
 ---
@@ -59,32 +69,55 @@ EVARA combines a hybrid dense-sparse retrieval pipeline, context-aware neighborh
 
 | Mode | Purpose | Output Schema |
 |:-----|:--------|:-------------|
-| **Normal RAG Mode** | Multi-format document synthesis (PDF, DOCX, CSV, JSON, MD, HTML, ZIP) | Executive summaries · Timelines · Comparative analyses |
-| **Security Copilot Mode** | Vulnerability scan, compliance report & asset audit processing | Asset → Severity → Finding → Evidence → Mitigation Priority |
+| 🔵 **Normal RAG Mode** | Multi-format document synthesis (PDF, DOCX, CSV, JSON, MD, HTML, ZIP) | Executive summaries · Timelines · Comparative analyses |
+| 🟢 **Security Copilot Mode** | Vulnerability scan, compliance report & asset audit processing | Asset → Severity → Finding → Evidence → Mitigation Priority |
+
+---
 
 ### Advanced Hybrid Retrieval Pipeline
 
 ```
-User Query
-    │
-    ├─► Dense Vector Search (ChromaDB cosine, top-20)
-    │
-    ├─► Sparse BM25 Keyword Search (parallel, exact-term matching)
-    │
-    ├─► Multi-Query Expansion (domain-variant generation)
-    │
-    ├─► Neighborhood Expansion (fetch ±1 adjacent pages)
-    │
-    ├─► Deduplication + Context Compression (6,000-char budget)
-    │
-    └─► FlashRank Cross-Encoder Reranking → top-8 chunks → LLM
+                           User Query
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                                  ▼
+  Dense Vector Search                   Sparse BM25 Search
+  (ChromaDB cosine, top-20)           (parallel exact-term match)
+              │                                  │
+              └────────────────┬────────────────┘
+                               ▼
+                   Multi-Query Expansion
+                  (domain-variant generation)
+                               │
+                               ▼
+                   Neighborhood Expansion
+                   (fetch ±1 adjacent pages)
+                               │
+                               ▼
+              Deduplication + Context Compression
+                       (6,000-char budget)
+                               │
+                               ▼
+            FlashRank Cross-Encoder Reranking
+                        → top-8 chunks
+                               │
+                               ▼
+                             LLM  ✨
 ```
+
+---
 
 ### Production-Grade Guardrails
 
 ```
-Input Shield ──► blocks: jailbreaks · injections · SQL/shell overrides
-Output Auditor ──► sentence-level overlap check (≥25%) → flags hallucinations
+┌─────────────────────────────────────────────────────────┐
+│  INPUT SHIELD                                           │
+│  ──► blocks: jailbreaks · injections · SQL/shell overrides│
+├─────────────────────────────────────────────────────────┤
+│  OUTPUT AUDITOR                                         │
+│  ──► sentence-level overlap check (≥25%)                │
+│  ──► flags hallucinations with UI warning banner        │
+└─────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -138,12 +171,12 @@ graph TD
 
 | Feature | Description |
 |:--------|:-----------|
-| **Dual-Theme Mode Switching** | Blue/Slate (Normal) ↔ Emerald/Zinc (Security) — reflects active cognition mode |
-| **Live Index Reports Tab** | Auto-generates structured analysis reports upon drag-and-drop indexing |
-| **System Logs Console** | Real-time terminal: file indexing, pipeline status, engine latencies |
-| **API Credit Ledger** | Per-query token cost tracking with remaining budget display and manual reset |
-| **Floating Reference Inspector** | Inline source citations with document name, page number, and similarity score |
-| **Partial RAG Fallback Banner** | Visible offline warning when LLM API is unavailable; raw chunks shown instead |
+| 🎨 **Dual-Theme Mode Switching** | Blue/Slate (Normal) ↔ Emerald/Zinc (Security) — reflects active cognition mode |
+| 📊 **Live Index Reports Tab** | Auto-generates structured analysis reports upon drag-and-drop indexing |
+| 🖥️ **System Logs Console** | Real-time terminal: file indexing, pipeline status, engine latencies |
+| 💳 **API Credit Ledger** | Per-query token cost tracking with remaining budget display and manual reset |
+| 🔍 **Floating Reference Inspector** | Inline source citations with document name, page number, and similarity score |
+| ⚠️ **Partial RAG Fallback Banner** | Visible offline warning when LLM API is unavailable; raw chunks shown instead |
 
 ---
 
@@ -166,29 +199,29 @@ RAG/
 ├── backend/
 │   ├── app/
 │   │   ├── core/
-│   │   │   └── config.py           # System settings, chunk bounds, collections
+│   │   │   └── config.py          # System settings, chunk bounds, collections
 │   │   ├── services/
-│   │   │   ├── chunker.py          # Semantic document chunking
-│   │   │   ├── guardrails.py       # Input/Output validation & injection filters
-│   │   │   ├── indexer.py          # Incremental document registration & CRUD
-│   │   │   ├── llm.py              # Groq API client + fallback handler
-│   │   │   ├── parser.py           # PDF, Excel, Word, HTML parser wrappers
-│   │   │   ├── retriever.py        # Hybrid retrieval orchestrator
-│   │   │   └── vector_store.py     # ChromaDB interface & embedding generator
-│   │   └── main.py                 # FastAPI routing, endpoints, auto-analyzer
-│   ├── data/                       # Persistent vector DB & file storage (gitignored)
+│   │   │   ├── chunker.py         # Semantic document chunking
+│   │   │   ├── guardrails.py      # Input/Output validation & injection filters
+│   │   │   ├── indexer.py         # Incremental document registration & CRUD
+│   │   │   ├── llm.py             # Groq API client + fallback handler
+│   │   │   ├── parser.py          # PDF, Excel, Word, HTML parser wrappers
+│   │   │   ├── retriever.py       # Hybrid retrieval orchestrator
+│   │   │   └── vector_store.py    # ChromaDB interface & embedding generator
+│   │   └── main.py                # FastAPI routing, endpoints, auto-analyzer
+│   ├── data/                      # Persistent vector DB & file storage (gitignored)
 │   ├── requirements.txt
 │   ├── .env.example
-│   └── .env                        # API credentials (gitignored)
+│   └── .env                       # API credentials (gitignored)
 ├── frontend/
 │   ├── src/
-│   │   ├── App.tsx                 # Core UI dashboard
+│   │   ├── App.tsx                # Core UI dashboard
 │   │   ├── main.tsx
 │   │   └── index.css
 │   ├── package.json
 │   ├── tailwind.config.js
 │   └── vite.config.ts
-├── screenshots/                    # UI screenshots (referenced above)
+├── screenshots/                   # UI screenshots (referenced above)
 └── .gitignore
 ```
 
@@ -214,7 +247,7 @@ cp .env.example .env
 
 # Launch API server
 uvicorn app.main:app --reload --port 8000
-# API: http://localhost:8000
+# API:          http://localhost:8000
 # Swagger docs: http://localhost:8000/docs
 ```
 
@@ -251,24 +284,26 @@ EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
 
 ---
 
+## 🎓 Project Submission & Presentation Guide
+
+### 1. Application & Purpose
+
+**EVARA** is a dual-cognition RAG platform designed for enterprise documents. It operates in two modes:
+
+- 🔵 **Normal Mode:** For general document indexing and querying (handling PDFs, Word files, CSV, etc.) with auto-generated summaries, timelines, and concept breakdowns.
+- 🟢 **Security Mode (Security Copilot):** Specially engineered to analyze vulnerability scans, asset reports, and compliance files. It enforces structured extraction schemas to audit CVEs, ports, and hosts.
 
 ---
 
-## 🎓 Project Submission & Presentation Guide
-
-This section compiles all the key details required for the project presentation and submission.
-
-### 1. Application & Purpose
-**EVARA** is a dual-cognition RAG platform designed for enterprise documents. It operates in two modes:
-- **Normal Mode:** For general document indexing and querying (handling PDFs, Word files, CSV, etc.) with auto-generated summaries, timelines, and concept breakdowns.
-- **Security Mode (Security Copilot):** Specially engineered to analyze vulnerability scans, asset reports, and compliance files. It enforces structured extraction schemas to audit CVEs, ports, and hosts.
-
 ### 2. System Prompts Used
+
 The system utilizes two distinct system prompts depending on the active cognition mode:
 
-#### Normal Mode Prompt
+#### 🔵 Normal Mode Prompt
+
 ```text
 You are EVARA, an evidence-driven document analysis assistant.
+
 RULES:
 - Answer ONLY from the provided document context below.
 - Never use training knowledge or make up facts.
@@ -277,9 +312,11 @@ RULES:
 - Be precise, structured, and cite [filename | page N] inline.
 ```
 
-#### Security Mode Prompt
+#### 🟢 Security Mode Prompt
+
 ```text
 You are EVARA Security Analyst, an evidence-driven cybersecurity analysis assistant.
+
 RULES:
 - Analyze ONLY from the provided scan/report context below.
 - Never invent CVEs, CVSS scores, or vulnerabilities not present in the data.
@@ -288,8 +325,12 @@ RULES:
 - If information is absent, state it explicitly.
 ```
 
+---
+
 ### 3. RAG System Implementation
+
 Our implementation features a state-of-the-art hybrid pipeline:
+
 - **Universal Parser & Semantic Chunker:** Extracts structured text and segments it into semantic units of 850 characters with 175 overlapping characters to preserve semantic context across chunk borders.
 - **Persistent Vector Store:** ChromaDB stores high-dimensional embeddings generated by the `all-MiniLM-L6-v2` SentenceTransformer.
 - **Hybrid Dense-Sparse Retrieval:** Combines dense cosine similarity vector search with sparse BM25 keyword matching.
@@ -297,12 +338,18 @@ Our implementation features a state-of-the-art hybrid pipeline:
 - **Cross-Encoder Reranking:** Leverages FlashRank (`ms-marco-MiniLM-L-12-v2`) to perform neural reranking, keeping the top-8 most relevant chunks.
 - **Guardrails:** An **Input Shield** prevents jailbreaks/SQL injections, and an **Output Auditor** verifies claims by checking token overlap (minimum 25%) against the source text to prevent hallucinations.
 
+---
+
 ### 4. How RAG Helps the Application
+
 - **Zero Hallucination:** In security auditing, guessing CVEs or severities is dangerous. RAG grounds every response in the uploaded vulnerability report, ensuring 100% factual accuracy.
 - **Real-Time Data Indexing:** Users can upload any new scan report or document, and the system instantly answers questions about it without delay.
 - **Dynamic Context Insertion:** It feeds exact context windows (up to 6,000 characters) to the LLM, keeping credit/token costs highly optimized.
 
+---
+
 ### 5. Why RAG was Chosen (vs. Fine-Tuning)
+
 - **Zero Retraining Overhead:** Fine-tuning an LLM on new vulnerability databases or document updates requires massive GPU resources and time. With RAG, updating knowledge takes less than a second (just upload a new document/delete the old one).
 - **Security & Privacy:** Private corporate scans are kept local and queried securely, rather than being permanently burned into weights of a public model.
 - **Absolute Source Citations:** RAG allows us to trace every single recommendation to its source page and document. Fine-tuning offers no mechanism for verifiable inline citation mapping.
@@ -311,7 +358,8 @@ Our implementation features a state-of-the-art hybrid pipeline:
 
 <div align="center">
 
-**EVARA v3.0 — Deterministic answers compiled solely via internal index maps. Zero heuristics hallucinated.**
+**EVARA v3.0**
 
-</div>#   E V A R A - R A G  
- 
+*Deterministic answers compiled solely via internal index maps. Zero heuristics hallucinated.*
+
+</div>
