@@ -106,8 +106,8 @@ bld/
 [Bb]in/
 [Oo]bj/
 
-# Large Deliverables Video Files (Exceeds GitHub 100MB limit)
-deliverables/*.mp4
+# Large Deliverables Video Files (Tracked via Git LFS)
+# deliverables/*.mp4
 deliverables/*.mov
 deliverables/*.mkv
 deliverables/*.avi
