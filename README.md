@@ -313,4 +313,5 @@ Our implementation features a state-of-the-art hybrid pipeline:
 
 **EVARA v3.0 — Deterministic answers compiled solely via internal index maps. Zero heuristics hallucinated.**
 
-</div>
+</div>#   E V A R A - R A G  
+ 
